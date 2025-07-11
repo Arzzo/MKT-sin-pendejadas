@@ -1,0 +1,387 @@
+/* Definición de colores personalizados para un diseño más pulido */
+:root {
+    --color-primary-red: #b4201e; /* Rojo vibrante para acentos */
+    --color-dark-text: #1a1a1a; /* Texto oscuro principal, casi negro */
+    --color-light-bg: #f0f2f5; /* Fondo general muy claro, casi blanco grisáceo */
+    --color-card-bg: #ffffff; /* Fondo de las tarjetas blanco puro */
+    --color-sidebar-bg: #1a1a1a; /* Fondo de la barra lateral, muy oscuro */
+    --color-sidebar-text: #e2e8f0; /* Texto claro para la barra lateral */
+    --color-sidebar-hover: #e0322f; /* Rojo ligeramente más oscuro para hover en sidebar */
+    --color-accent-light: #fef2f2; /* Un rojo muy suave para fondos claros */
+    --color-border-light: #e5e7eb; /* Un gris claro para bordes */
+}
+
+body {
+    font-family: 'Poppins', sans-serif; /* Fuente principal para el cuerpo del texto */
+    background-color: var(--color-light-bg); /* Fondo general del body */
+    color: var(--color-dark-text); /* Color de texto principal */
+    min-height: 100vh;
+    display: flex; /* Usar flexbox para el layout principal */
+    flex-direction: column;
+    overflow-x: hidden; /* Evitar scroll horizontal */
+    padding-top: 0; /* Eliminado el padding superior ya que el header fijo se quita */
+}
+
+/* Fuentes para títulos */
+h1, h2, h3 {
+    font-family: 'Montserrat', sans-serif; /* Fuente para todos los títulos */
+    color: var(--color-dark-text); /* Color de títulos */
+    line-height: 1.2; /* Mejorar legibilidad de títulos */
+}
+
+/* Contenedor principal del Dashboard */
+.dashboard-container {
+    display: flex;
+    flex-grow: 1;
+}
+
+/* Barra Lateral (Sidebar) */
+.sidebar {
+    width: 90px; /* Ancho reducido para mostrar solo iconos */
+    background-color: var(--color-sidebar-bg); /* Fondo oscuro */
+    color: var(--color-sidebar-text); /* Texto claro */
+    padding: 2rem 0.5rem; /* Padding ajustado */
+    box-shadow: 4px 0 15px rgba(0, 0, 0, 0.15); /* Sombra más pronunciada */
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    overflow-y: auto;
+    flex-shrink: 0;
+    border-right: 1px solid rgba(255, 255, 255, 0.05); /* Borde sutil para separación */
+    transition: width 0.3s ease-in-out; /* Transición para el ancho de la sidebar */
+}
+.sidebar:hover {
+    width: 280px; /* Expandir al pasar el ratón */
+}
+.sidebar-nav a {
+    @apply flex items-center py-3 px-2 rounded-xl text-lg font-medium mb-3; /* Padding ajustado */
+    color: var(--color-sidebar-text);
+    transition: all 0.25s ease-in-out; /* Transición más suave */
+    justify-content: center; /* Centrar el icono */
+    overflow: hidden; /* Ocultar el texto por defecto */
+}
+.sidebar-nav a:hover, .sidebar-nav a.active {
+    background-color: var(--color-sidebar-hover); /* Rojo para hover */
+    color: white;
+    transform: translateX(0); /* No hay movimiento horizontal aquí, ya que el ancho cambia */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Sombra al hacer hover */
+}
+.sidebar-nav a svg {
+    margin-right: 0; /* Sin margen por defecto */
+    fill: currentColor;
+    width: 1.5em;
+    height: 1.5em;
+    flex-shrink: 0; /* Evitar que el icono se encoja */
+}
+.sidebar-text {
+    opacity: 0;
+    max-width: 0;
+    overflow: hidden;
+    white-space: nowrap;
+    transition: all 0.25s ease-in-out;
+    margin-left: 0; /* Sin margen por defecto */
+    text-align: left; /* Asegura que el texto se alinee a la izquierda cuando visible */
+    flex-grow: 1; /* Permite que el texto ocupe el espacio restante */
+}
+.sidebar:hover .sidebar-text {
+    opacity: 1;
+    max-width: 200px; /* Ancho máximo para el texto */
+    margin-left: 1rem; /* Margen cuando el texto es visible */
+}
+.sidebar-nav a.active .sidebar-text {
+    opacity: 1; /* Mostrar texto si está activo */
+    max-width: 200px;
+    margin-left: 1rem;
+}
+
+.sidebar-header {
+    margin-bottom: 2.5rem;
+    text-align: center;
+}
+.sidebar-header .sidebar-logo {
+    width: 60px; /* Tamaño más pequeño para el logo cuando la sidebar está colapsada */
+    height: auto;
+    margin: 0 auto;
+    display: block;
+    border-radius: 0.5rem;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    transition: width 0.3s ease-in-out;
+}
+.sidebar:hover .sidebar-logo {
+    width: 180px; /* Tamaño original del logo al expandir */
+}
+
+
+/* Área de Contenido Principal */
+.main-content {
+    flex-grow: 1;
+    padding: 2.5rem;
+    overflow-y: auto;
+    background-color: var(--color-light-bg);
+}
+
+/* Estilo Reutilizable para Tarjetas del Dashboard (Widgets) */
+.dashboard-card {
+    background-color: var(--color-card-bg);
+    padding: 2.5rem;
+    border-radius: 1.5rem;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+    margin-bottom: 2.5rem;
+    transition: all 0.3s ease-in-out;
+    border: none;
+    position: relative; /* Para posibles efectos internos */
+    overflow: hidden; /* Para contener elementos que puedan salirse */
+}
+.dashboard-card:hover {
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.15);
+    transform: translateY(-8px);
+}
+
+/* Botones Principales y Secundarios */
+.btn-primary {
+    @apply bg-[var(--color-primary-red)] text-white font-bold py-3.5 px-7 rounded-xl shadow-lg;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    letter-spacing: 0.05em;
+    border: none; /* Asegurar que no haya borde por defecto */
+}
+.btn-primary:hover {
+    @apply bg-red-700 shadow-xl;
+    transform: translateY(-4px) scale(1.03);
+}
+.btn-secondary {
+    @apply bg-white text-[var(--color-primary-red)] font-bold py-3.5 px-7 rounded-xl shadow-lg border border-[var(--color-primary-red)];
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    letter-spacing: 0.05em;
+}
+.btn-secondary:hover {
+    @apply bg-red-50 shadow-xl;
+    transform: translateY(-4px) scale(1.03);
+    border-color: var(--color-red-700);
+}
+
+/* Iconos dentro del cuerpo principal (más pequeños) */
+.main-content .icon {
+    width: 1.2em; /* Tamaño reducido */
+    height: 1.2em;
+    margin-right: 0.5em; /* Margen ajustado */
+    fill: currentColor; /* Asegura que el color del icono sea el del texto padre */
+}
+
+/* Estilos para campos de formulario */
+.form-input-field {
+    @apply w-full p-4 rounded-lg border-2 border-[var(--color-border-light)] focus:outline-none focus:border-[var(--color-primary-red)] mb-4 text-[var(--color-dark-text)] transition-all duration-200 ease-in-out;
+}
+.form-textarea-field {
+    @apply w-full p-4 rounded-lg border-2 border-[var(--color-border-light)] focus:outline-none focus:border-[var(--color-primary-red)] mb-4 text-[var(--color-dark-text)] transition-all duration-200 ease-in-out;
+    min-height: 100px; /* Altura mínima para textareas */
+}
+
+/* Estilo para el spinner de carga */
+.spinner {
+    border: 4px solid rgba(255, 255, 255, 0.3);
+    border-top: 4px solid #fff;
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+    animation: spin 1s linear infinite;
+    margin-left: 1rem;
+}
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Hero Section sin degradado, con color sólido */
+.hero-bg {
+    background-color: var(--color-primary-red); /* Color sólido rojo */
+    padding: 4rem 2.5rem;
+    border-radius: 1.5rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    color: white;
+    position: relative;
+    overflow: hidden;
+}
+/* Eliminamos el pseudo-elemento ::before y su animación */
+.hero-bg::before {
+    content: none; /* Elimina el pseudo-elemento */
+}
+
+/* Floating AI Assistant Button */
+#chat-float-button {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    background-color: var(--color-primary-red);
+    color: white;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+    cursor: pointer;
+    z-index: 100; /* Asegura que esté por encima de todo */
+    transition: all 0.3s ease-in-out;
+}
+#chat-float-button:hover {
+    background-color: #e0322f;
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.35);
+}
+
+/* AI Chat Modal */
+#ai-chat-modal {
+    position: fixed;
+    bottom: 90px; /* Arriba del botón flotante */
+    right: 2rem;
+    width: 380px; /* Ancho fijo para el chat */
+    height: 500px; /* Altura fija para el chat */
+    background-color: var(--color-card-bg);
+    border-radius: 1rem;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: column;
+    z-index: 101;
+    overflow: hidden;
+    transform: scale(0.8);
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+#ai-chat-modal.open {
+    transform: scale(1);
+    opacity: 1;
+    pointer-events: all;
+}
+
+.chat-header {
+    background-color: var(--color-primary-red);
+    color: white;
+    padding: 1rem 1.5rem;
+    border-top-left-radius: 1rem;
+    border-top-right-radius: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 1.25rem;
+}
+.chat-header .close-btn {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+.chat-header .close-btn:hover {
+    transform: rotate(90deg);
+}
+
+.chat-body {
+    flex-grow: 1;
+    padding: 1rem;
+    overflow-y: auto;
+    background-color: var(--color-light-bg);
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    scroll-behavior: smooth;
+}
+
+.chat-message {
+    max-width: 80%;
+    padding: 0.75rem 1rem;
+    border-radius: 1rem;
+    line-height: 1.4;
+    word-wrap: break-word;
+}
+.chat-message.user {
+    background-color: #e0f2fe; /* Light blue */
+    align-self: flex-end;
+    border-bottom-right-radius: 0.25rem;
+}
+.chat-message.ai {
+    background-color: #f0f0f0; /* Light gray */
+    align-self: flex-start;
+    border-bottom-left-radius: 0.25rem;
+}
+/* Estilo para el botón de WhatsApp dentro del chat */
+.chat-message .whatsapp-button {
+    display: inline-block;
+    background-color: #25D366; /* Color de WhatsApp */
+    color: white;
+    font-weight: bold;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    margin-top: 0.5rem;
+    text-decoration: none;
+    transition: background-color 0.2s ease;
+}
+.chat-message .whatsapp-button:hover {
+    background-color: #1DA851; /* Un tono más oscuro al pasar el ratón */
+}
+
+
+.chat-input-area {
+    display: flex;
+    padding: 1rem;
+    border-top: 1px solid var(--color-border-light);
+    background-color: var(--color-card-bg);
+}
+.chat-input-area input {
+    flex-grow: 1;
+    padding: 0.75rem 1rem;
+    border: 1px solid var(--color-border-light);
+    border-radius: 0.75rem;
+    margin-right: 0.75rem;
+    font-size: 1rem;
+    transition: border-color 0.2s ease;
+}
+.chat-input-area input:focus {
+    outline: none;
+    border-color: var(--color-primary-red);
+}
+.chat-input-area button {
+    background-color: var(--color-primary-red);
+    color: white;
+    border: none;
+    border-radius: 0.75rem;
+    padding: 0.75rem 1rem;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+.chat-input-area button:hover {
+    background-color: #e0322f;
+}
+.chat-input-area button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+/* Mobile Responsiveness for Chat */
+@media (max-width: 768px) {
+    #chat-float-button {
+        bottom: 1rem;
+        right: 1rem;
+        width: 50px;
+        height: 50px;
+        font-size: 1.75rem;
+    }
+    #ai-chat-modal {
+        width: 90%; /* Ocupa casi todo el ancho */
+        height: 80%; /* Ocupa la mayor parte de la altura */
+        bottom: 1rem; /* Ajustar posición */
+        right: 5%; /* Centrar horizontalmente */
+        left: 5%;
+        transform: scale(1); /* No animar escala en móvil, solo aparición */
+        opacity: 0;
+        top: auto; /* Asegurar que no se fije en la parte superior */
+    }
+    #ai-chat-modal.open {
+        opacity: 1;
+    }
+}
