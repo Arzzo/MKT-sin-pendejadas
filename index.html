@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marketing sin Pendejadas - Dashboard SEO/SEM Optimizado</title>
+    
+    <!-- Meta Etiquetas Esenciales para SEO -->
+    <meta name="description" content="Tu centro de mando para estrategias de marketing digital reales, sin humo ni promesas vacías. ¡Solo resultados y crecimiento de negocio garantizado! Ebook, asesorías, herramientas IA para SEO, SEM, contenido y más.">
+    <meta name="keywords" content="marketing digital, SEO, SEM, marketing de contenidos, publicidad online, estrategias de marketing, negocio online, ebook marketing, asesorías marketing, IA marketing, Jerry Becza, captación de leads, conversión">
+    <meta name="author" content="Jerry Becza">
+
+    <!-- Open Graph Meta Tags para Redes Sociales (SEO Social) -->
+    <meta property="og:title" content="Marketing sin Pendejadas - Tu Guía Definitiva para el Éxito Digital">
+    <meta property="og:description" content="Descubre estrategias de marketing digital reales y herramientas de IA para impulsar tu negocio online. ¡Sin rodeos, solo resultados! Optimizado para máxima conversión.">
+    <meta property="og:image" content="https://placehold.co/1200x630/b4201e/ffffff?text=Marketing+sin+Pendejadas+OG"> <!-- Placeholder para imagen de Open Graph -->
+    <meta property="og:url" content="https://tudominio.com"> <!-- Reemplaza con tu URL real -->
+    <meta property="og:type" content="website">
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Marketing sin Pendejadas - Tu Guía Definitiva para el Éxito Digital">
+    <meta property="twitter:description" content="Descubre estrategias de marketing digital reales y herramientas de IA para impulsar tu negocio online. ¡Sin rodeos, solo resultados! Optimizado para máxima conversión.">
+    <meta name="twitter:image" content="https://placehold.co/1200x630/b4201e/ffffff?text=Marketing+sin+Pendejadas+Twitter"> <!-- Placeholder para imagen de Twitter Card -->
+
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Enlace a tu archivo de estilos CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Encabezado Móvil/Botón de Alternancia para Sidebar (Solo Móvil) -->
+    <header class="md:hidden bg-white shadow-sm py-4 px-4 flex justify-between items-center">
+        <a href="#" class="brand-name">Marketing sin Pendejadas</a>
+        <button id="sidebarToggle" class="text-[var(--color-dark-text)] text-2xl" aria-label="Toggle navigation">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+        </button>
+    </header>
+
+    <div class="dashboard-container">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <!-- Placeholder para el logo -->
+                <img src="https://placehold.co/180x60/1a1a1a/ffffff?text=Tu+Logo" alt="Logo de la Marca" class="sidebar-logo">
+            </div>
+            <nav class="sidebar-nav" id="sidebarNav">
+                <a href="#overview" class="active">
+                    <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg>
+                    <span class="sidebar-text">Inicio</span>
+                </a>
+                <a href="#ebook-section">
+                    <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 6h16v2H4zm0 5h16v2H4zm0 5h16v2H4z"/></svg>
+                    <span class="sidebar-text">El Ebook</span>
+                </a>
+                <a href="#content-ideas">
+                    <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-1-13h2v6h-2zm0 8h2v2h-2z"/></svg>
+                    <span class="sidebar-text">Ideas de Contenido</span>
+                </a>
+                <a href="#headline-optimizer">
+                    <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 11V3H8v8H2v10h20V11h-6zm-6 0V5h4v6h-4zm10 8h-4v-6h4v6zM4 19h4v-6H4v6z"/></svg>
+                    <span class="sidebar-text">Optimizador Titulares</span>
+                </a>
+                <a href="#audience-segmenter">
+                    <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>
+                    <span class="sidebar-text">Segmentador Audiencia</span>
+                </a>
+                <a href="#personalized-strategy-generator">
+                    <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9 21c0 .55.45 1 1 1h4c.55 0 1-.45 1-1h-6zm3-19C8.95 2 7 3.95 7 6.5c0 2.25 1.5 4.1 3.5 4.78V15h3v-3.72c2-0.68 3.5-2.53 3.5-4.78C17 3.95 15.05 2 12 2z"/></svg>
+                    <span class="sidebar-text">Estrategias IA</span>
+                </a>
+                <a href="#social-ads-copy-generator">
+                    <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 6h-2V7h2v2zm0 4h-2v-2h2v2zm0 4h-2v-2h2v2zM9 9H7V7h2v2zm0 4H7v-2h2v2zm0 4H7v-2h2v2z"/></svg>
+                    <span class="sidebar-text">Copys Anuncios</span>
+                </a>
+                <a href="#subscription-section">
+                    <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+                    <span class="sidebar-text">Suscripción</span>
+                </a>
+                <a href="#asesorias-section">
+                    <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34c-.39-.39-1.02-.39-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"/></svg>
+                    <span class="sidebar-text">Asesorías</span>
+                </a>
+                <a href="#affiliate-products">
+                    <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>
+                    <span class="sidebar-text">Productos Afiliados</span>
+                </a>
+                <a href="#testimonials-section">
+                    <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zM6 14v-2h8v2H6zm10 0h2v-2h-2v2zm0-3h2V9h-2v2zm0-3h2V6h-2v2z"/></svg>
+                    <span class="sidebar-text">Testimonios</span>
+                </a>
+            </nav>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="main-content">
+            <!-- Overview/Hero Section -->
+            <section id="overview" class="dashboard-card hero-bg text-white text-center">
+                <h1 class="text-4xl md:text-5xl font-extrabold leading-tight mb-4">
+                    Bienvenido al Dashboard de Marketing sin Pendejadas
+                </h1>
+                <p class="text-xl md:text-2xl mb-6 max-w-3xl mx-auto">
+                    Tu centro de mando para <strong>estrategias de marketing digital</strong> reales, sin humo ni promesas vacías. ¡Solo <strong>resultados</strong> y <strong>crecimiento de negocio</strong> garantizado!
+                </p>
+                <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-6">
+                    <a href="#ebook-section" class="btn-primary">
+                        ¡Descarga el Ebook Ahora!
+                    </a>
+                    <a href="#asesorias-section" class="btn-secondary">
+                        Agenda tu Asesoría de Marketing
+                    </a>
+                </div>
+            </section>
+
+            <!-- About the Book Section -->
+            <section id="ebook-section" class="dashboard-card">
+                <div class="flex flex-col md:flex-row items-center gap-12">
+                    <div class="md:w-1/2 flex justify-center">
+                        <img src="https://placehold.co/400x600/b4201e/ffffff?text=Portada+del+Libro" alt="Portada del libro Marketing sin Pendejadas" class="rounded-lg shadow-2xl max-w-full h-auto">
+                    </div>
+                    <div class="md:w-1/2 text-center md:text-left">
+                        <h2 class="text-3xl md:text-4xl font-bold mb-6">
+                            Marketing sin Pendejadas: ¡La Guía Definitiva para el Éxito Digital!
+                        </h2>
+                        <div class="text-lg text-[var(--color-dark-text)] mb-6 leading-relaxed space-y-4">
+                            <p>¿Cansado de <strong>estrategias de marketing</strong> que no funcionan? Este <strong>ebook</strong> es tu dosis de realidad para el <strong>marketing digital</strong>. Aprende tácticas directas, <strong>aplicables</strong> y con <strong>resultados probados</strong>. Sin teorías aburridas, solo <strong>estrategias con colmillo</strong> para <strong>captar atención</strong>, <strong>conectar</strong> con tu <strong>audiencia</strong> y <strong>vender online</strong> sin rodeos. ¡Es hora de <strong>optimizar tu negocio</strong> y <strong>desaprender pendejadas</strong> para <strong>generar ventas</strong> de verdad!</p>
+                            <ul class="list-none text-left space-y-2 pl-0">
+                                <li>
+                                    <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                                    <strong>Estrategias de marketing</strong> directas y aplicables para tu <strong>negocio online</strong>.
+                                </li>
+                                <li>
+                                    <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                                    <strong>Resultados probados</strong> en <strong>ventas</strong> y <strong>crecimiento</strong>, sin rodeos.
+                                </li>
+                                <li>
+                                    <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                                    Vende de verdad, <strong>optimiza tu conversión</strong>, y deja de sonar a vendedor de seguros.
+                                </li>
+                            </ul>
+                            <p class="text-right font-semibold">— Jerry Becza</p>
+                            <p class="text-right text-sm">Licenciado en Mercadotecnia. Experto en <strong>marketing digital</strong> y <strong>optimización de embudos de venta</strong>.</p>
+                            <p class="text-right text-sm">Contador oficial de pendejadas que debes evitar en tu <strong>marca</strong> y <strong>publicidad online</strong>.</p>
+                        </div>
+                        <a href="#" class="btn-primary">
+                            Comprar Ebook por $X.XX
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Gemini API Feature: Content Idea Generator -->
+            <section id="content-ideas" class="dashboard-card">
+                <div class="text-center">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-8">
+                        Generador de Ideas de Contenido SEO/SEM ✨
+                    </h2>
+                    <p class="text-lg text-[var(--color-dark-text)] mb-8 max-w-3xl mx-auto">
+                        ¿Necesitas <strong>inspiración para tu marketing de contenidos</strong>? Describe tu <strong>negocio online</strong> o un <strong>tema clave</strong>, y la IA de Gemini te dará <strong>ideas de contenido</strong> directas y sin rodeos, <strong>optimizadas para SEO</strong> y <strong>campañas SEM</strong>. ¡Impulsa tu <strong>tráfico orgánico</strong> y <strong>pago</strong>!
+                    </p>
+                    <div class="max-w-2xl mx-auto p-6 bg-[var(--color-light-bg)] rounded-xl shadow-md">
+                        <textarea id="contentInput" class="form-textarea-field" rows="4" placeholder="Ej: Vendo café orgánico local, o: Cómo hacer crecer un negocio pequeño con marketing digital..."></textarea>
+                        <button id="generateIdeasBtn" class="btn-primary flex items-center justify-center w-full">
+                            Generar Ideas de Contenido ✨
+                            <span id="loadingSpinner" class="spinner hidden"></span>
+                        </button>
+                        <div id="contentOutput" class="mt-8 p-6 bg-white rounded-lg border border-[var(--color-border-light)] text-left text-[var(--color-dark-text)] min-h-[100px] flex items-center justify-center">
+                            <p class="text-gray-500">Tus <strong>ideas de contenido</strong> aparecerán aquí.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Gemini API Feature: Headline Optimizer -->
+            <section id="headline-optimizer" class="dashboard-card">
+                <div class="text-center">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-8">
+                        Optimizador de Titulares para SEO/SEM ✨
+                    </h2>
+                    <p class="text-lg text-[var(--color-dark-text)] mb-8 max-w-3xl mx-auto">
+                        Crea <strong>titulares irresistibles</strong> para tus <strong>productos</strong>, <strong>servicios</strong> o <strong>artículos</strong>, <strong>optimizados para buscadores (SEO)</strong> y <strong>campañas de pago (SEM)</strong>. Incluye <strong>palabras clave de alto impacto</strong>, un claro <strong>valor diferencial</strong> y un fuerte <strong>llamado a la acción</strong>. ¡Atrae <strong>clics</strong> y <strong>ventas</strong> en tu <strong>publicidad digital</strong>!
+                    </p>
+                    <div class="max-w-2xl mx-auto p-6 bg-white rounded-xl shadow-md">
+                        <textarea id="headlineInput" class="form-textarea-field" rows="4" placeholder="Ej: Un curso online para emprendedores que quieren escalar su negocio sin invertir mucho en publicidad..."></textarea>
+                        <button id="generateHeadlinesBtn" class="btn-primary flex items-center justify-center w-full">
+                            Generar Titulares Optimizados ✨
+                            <span id="loadingSpinnerHeadlines" class="spinner hidden"></span>
+                        </button>
+                        <div id="headlineOutput" class="mt-8 p-6 bg-[var(--color-light-bg)] rounded-lg border border-[var(--color-border-light)] text-left text-[var(--color-dark-text)] min-h-[100px] flex items-center justify-center">
+                            <p class="text-gray-500">Tus <strong>titulares optimizados</strong> aparecerán aquí.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Gemini API Feature: Audience Segmenter -->
+            <section id="audience-segmenter" class="dashboard-card">
+                <div class="text-center">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-8">
+                        Segmentador de Audiencia Inteligente 🎯
+                    </h2>
+                    <p class="text-lg text-[var(--color-dark-text)] mb-8 max-w-3xl mx-auto">
+                        Define a tu <strong>público objetivo</strong> con precisión. Responde unas preguntas clave sobre tu <strong>negocio</strong> y la IA de Gemini te dará una <strong>descripción detallada de tu segmento de mercado</strong>, incluyendo sus características, necesidades y cómo tu producto/servicio les beneficia. ¡La base para un <strong>marketing efectivo</strong>!
+                    </p>
+                    <div class="max-w-2xl mx-auto p-6 bg-[var(--color-light-bg)] rounded-xl shadow-md">
+                        <div class="mb-4">
+                            <label for="segmenterBusiness" class="block text-left text-sm font-medium text-gray-700 mb-2">¿Qué tipo de negocio/producto/servicio ofreces?</label>
+                            <input type="text" id="segmenterBusiness" class="form-input-field" placeholder="Ej: Tienda de café orgánico, software de gestión de proyectos...">
+                        </div>
+                        <div class="mb-4">
+                            <label for="segmenterDemographics" class="block text-left text-sm font-medium text-gray-700 mb-2">Características demográficas (edad, género, ubicación, ingresos, educación):</label>
+                            <input type="text" id="segmenterDemographics" class="form-input-field" placeholder="Ej: Hombres y mujeres, 25-45 años, urbanos, ingresos medios-altos...">
+                        </div>
+                        <div class="mb-4">
+                            <label for="segmenterPsychographics" class="block text-left text-sm font-medium text-gray-700 mb-2">Características psicográficas (intereses, valores, estilo de vida, comportamientos):</label>
+                            <input type="text" id="segmenterPsychographics" class="form-input-field" placeholder="Ej: Interesados en sostenibilidad, buscan conveniencia, valoran la calidad...">
+                        </div>
+                        <div class="mb-4">
+                            <label for="segmenterNeeds" class="block text-left text-sm font-medium text-gray-700 mb-2">¿Qué necesidades o problemas resuelve tu producto/servicio para ellos?</label>
+                            <textarea id="segmenterNeeds" class="form-textarea-field" rows="3" placeholder="Ej: Falta de tiempo para cocinar, deseo de vida más saludable, necesidad de organizar tareas..."></textarea>
+                        </div>
+                        <button id="segmentAudienceBtn" class="btn-primary flex items-center justify-center w-full">
+                            Segmentar Audiencia ✨
+                            <span id="loadingSpinnerSegmenter" class="spinner hidden"></span>
+                        </button>
+                        <div id="segmenterOutput" class="mt-8 p-6 bg-white rounded-lg border border-[var(--color-border-light)] text-left text-[var(--color-dark-text)] min-h-[100px] flex items-center justify-center">
+                            <p class="text-gray-500">La <strong>descripción de tu segmento de audiencia</strong> aparecerá aquí.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Gemini API Feature: Personalized Marketing Strategy Generator -->
+            <section id="personalized-strategy-generator" class="dashboard-card">
+                <div class="text-center">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-8">
+                        Generador de Estrategias de Marketing Personalizadas 🧠
+                    </h2>
+                    <p class="text-lg text-[var(--color-dark-text)] mb-8 max-w-3xl mx-auto">
+                        Obtén una <strong>estrategia de marketing digital</strong> a medida para tu <strong>negocio</strong>. Describe tu <strong>empresa</strong>, <strong>público objetivo</strong> y <strong>metas</strong>, y la IA de Gemini te proporcionará un plan de acción detallado para <strong>alcanzar tus objetivos</strong>. ¡Tu brújula para el <strong>éxito online</strong>!
+                    </p>
+                    <div class="max-w-2xl mx-auto p-6 bg-[var(--color-light-bg)] rounded-xl shadow-md">
+                        <textarea id="strategyInput" class="form-textarea-field" rows="8" placeholder="Ej: Mi negocio es una tienda online de ropa sostenible para jóvenes adultos (18-30 años) interesados en moda ética. Mi objetivo es aumentar las ventas en un 30% en los próximos 6 meses y construir una comunidad leal."></textarea>
+                        <button id="generateStrategyBtn" class="btn-primary flex items-center justify-center w-full">
+                            Generar Estrategia Personalizada 🚀
+                            <span id="loadingSpinnerStrategy" class="spinner hidden"></span>
+                        </button>
+                        <div id="strategyOutput" class="mt-8 p-6 bg-white rounded-lg border border-[var(--color-border-light)] text-left text-[var(--color-dark-text)] min-h-[100px] flex items-center justify-center">
+                            <p class="text-gray-500">Tu <strong>estrategia de marketing personalizada</strong> aparecerá aquí.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Gemini API Feature: Social Ads Copy Generator -->
+            <section id="social-ads-copy-generator" class="dashboard-card">
+                <div class="text-center">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-8">
+                        Generador de Copys para Anuncios de Redes Sociales ✍️
+                    </h2>
+                    <p class="text-lg text-[var(--color-dark-text)] mb-8 max-w-3xl mx-auto">
+                        Crea <strong>textos publicitarios</strong> que enganchen en <strong>redes sociales</strong>. Describe tu <strong>producto/servicio</strong>, <strong>público</strong> y <strong>objetivo del anuncio</strong> (ej. tráfico, ventas, leads), y la IA de Gemini generará opciones de copy optimizadas para captar la atención y generar acción. ¡Impulsa tus <strong>campañas en redes sociales</strong>!
+                    </p>
+                    <div class="max-w-2xl mx-auto p-6 bg-[var(--color-light-bg)] rounded-xl shadow-md">
+                        <div class="mb-4">
+                            <label for="adCopyProduct" class="block text-left text-sm font-medium text-gray-700 mb-2">Producto/Servicio a anunciar:</label>
+                            <input type="text" id="adCopyProduct" class="form-input-field" placeholder="Ej: Curso de fotografía online, servicio de limpieza a domicilio...">
+                        </div>
+                        <div class="mb-4">
+                            <label for="adCopyAudience" class="block text-left text-sm font-medium text-gray-700 mb-2">Público objetivo del anuncio:</label>
+                            <input type="text" id="adCopyAudience" class="form-input-field" placeholder="Ej: Emprendedores creativos, dueños de mascotas, padres jóvenes...">
+                        </div>
+                        <div class="mb-4">
+                            <label for="adCopyObjective" class="block text-left text-sm font-medium text-gray-700 mb-2">Objetivo principal del anuncio:</label>
+                            <input type="text" id="adCopyObjective" class="form-input-field" placeholder="Ej: Generar tráfico web, conseguir más leads, aumentar ventas, construir marca...">
+                        </div>
+                        <button id="generateAdCopyBtn" class="btn-primary flex items-center justify-center w-full">
+                            Generar Copys de Anuncios ✨
+                            <span id="loadingSpinnerAdCopy" class="spinner hidden"></span>
+                        </button>
+                        <div id="adCopyOutput" class="mt-8 p-6 bg-white rounded-lg border border-[var(--color-border-light)] text-left text-[var(--color-dark-text)] min-h-[100px] flex items-center justify-center">
+                            <p class="text-gray-500">Tus <strong>copys para anuncios</strong> aparecerán aquí.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Email Subscription Section -->
+            <section id="subscription-section" class="dashboard-card">
+                <div class="text-center">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-8">
+                        ¡Recibe Tips y Herramientas de Marketing Gratis Directo en Tu Email! 🚀
+                    </h2>
+                    <p class="text-lg text-[var(--color-dark-text)] mb-8 max-w-3xl mx-auto">
+                        Suscríbete a nuestra <strong>newsletter de marketing</strong> y obtén acceso exclusivo a <strong>consejos de marketing sin pendejadas</strong>, <strong>herramientas gratuitas</strong> y las últimas <strong>novedades en estrategias digitales</strong>. ¡Impulsa el <strong>crecimiento de tu negocio</strong> directamente desde tu bandeja de entrada!
+                    </p>
+                    <div class="max-w-xl mx-auto p-6 bg-[var(--color-light-bg)] rounded-xl shadow-md">
+                        <input type="email" id="emailInput" class="form-input-field" placeholder="Tu correo electrónico aquí..." required>
+                        <button id="subscribeBtn" class="btn-primary flex items-center justify-center w-full">
+                            ¡Quiero Mis Tips de Marketing Gratis! 🎉
+                            <span id="subscribeSpinner" class="spinner hidden"></span>
+                        </button>
+                        <div id="subscribeMessage" class="mt-4 text-sm font-semibold"></div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Marketing Consulting Section -->
+            <section id="asesorias-section" class="dashboard-card">
+                <div class="text-center">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-8">
+                        Asesorías Personalizadas de Marketing Digital
+                    </h2>
+                    <p class="text-lg text-[var(--color-dark-text)] mb-12 max-w-3xl mx-auto">
+                        ¿Necesitas un enfoque más directo y personalizado para tu <strong>estrategia de marketing</strong>? Mis <strong>asesorías</strong> están diseñadas para resolver tus desafíos específicos de <strong>marketing digital</strong>, ayudarte a trazar un <strong>plan de acción claro</strong> y <strong>escalar tu negocio</strong> con <strong>resultados tangibles</strong>.
+                    </p>
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                        <div class="card">
+                            <h3 class="text-xl font-semibold text-[var(--color-dark-text)] mb-3">
+                                <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-1-13h2v6h-2zm0 8h2v2h-2z"/></svg>
+                                <strong>Estrategia Digital</strong> y <strong>Plan de Marketing</strong>
+                            </h3>
+                            <p class="text-[var(--color-dark-text)]">Desarrollamos un <strong>plan digital</strong> a medida para tu <strong>negocio</strong>, identificando <strong>oportunidades clave</strong> de <strong>crecimiento online</strong>.</p>
+                        </div>
+                        <div class="card">
+                            <h3 class="text-xl font-semibold text-[var(--color-dark-text)] mb-3">
+                                <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 11V3H8v8H2v10h20V11h-6zm-6 0V5h4v6h-4zm10 8h-4v-6h4v6zM4 19h4v-6H4v6z"/></svg>
+                                <strong>Optimización de Anuncios</strong> (SEM)
+                            </h3>
+                            <p class="text-[var(--color-dark-text)]">Mejora el <strong>rendimiento de tus campañas publicitarias</strong> en plataformas como <strong>Facebook Ads</strong> o <strong>Google Ads</strong>, maximizando tu <strong>ROI</strong>.</p>
+                        </div>
+                        <div class="card">
+                            <h3 class="text-xl font-semibold text-[var(--color-dark-text)] mb-3">
+                                <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34c-.39-.39-1.02-.39-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"/></svg>
+                                <strong>Contenido</strong> y <strong>SEO</strong>
+                            </h3>
+                            <p class="text-[var(--color-dark-text)]">Creamos una <strong>estrategia de contenido</strong> que atrae y convierte, mejorando tu <strong>posicionamiento en buscadores</strong> y <strong>tráfico orgánico</strong>.</p>
+                        </div>
+                    </div>
+                    <div class="mt-12">
+                        <a href="#" class="btn-primary">
+                            Explorar Opciones de Asesoría
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Affiliate Products Section -->
+            <section id="affiliate-products" class="dashboard-card">
+                <div class="text-center">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-8">
+                        Más Productos y Recursos de Marketing Recomendados
+                    </h2>
+                    <p class="text-lg text-[var(--color-dark-text)] mb-12 max-w-3xl mx-auto">
+                        He seleccionado cuidadosamente una serie de <strong>libros</strong> y <strong>productos digitales</strong> que complementarán tu aprendizaje y te ayudarán a llevar tu <strong>marketing online</strong> al siguiente nivel. ¡Herramientas esenciales para <strong>emprendedores digitales</strong>!
+                    </p>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                        <!-- Producto de Afiliación 1 -->
+                        <div class="card flex flex-col items-center text-center p-6">
+                            <img src="https://placehold.co/150x200/d2cdc4/0d0d0d?text=Producto+1" alt="Libro de Afiliación 1" class="rounded-lg mb-4 shadow-sm">
+                            <h3 class="text-xl font-semibold text-[var(--color-dark-text)] mb-2">Libro X: El Arte de Vender Más</h3>
+                            <p class="text-[var(--color-dark-text)] mb-4 flex-grow">Un clásico para dominar las <strong>técnicas de ventas</strong> y <strong>persuasión en marketing</strong>.</p>
+                            <div class="w-full mt-4">
+                                <a href="https://ejemplo.com/producto1" target="_blank" rel="noopener noreferrer" class="btn-primary w-full">
+                                    Adquiérelo Ya
+                                </a>
+                            </div>
+                        </div>
+                        <!-- Producto de Afiliación 2 -->
+                        <div class="card flex flex-col items-center text-center p-6">
+                            <img src="https://placehold.co/150x200/d2cdc4/0d0d0d?text=Producto+2" alt="Producto de Afiliación 2" class="rounded-lg mb-4 shadow-sm">
+                            <h3 class="text-xl font-semibold text-[var(--color-dark-text)] mb-2">Herramienta Y: Automatización de Email Marketing</h3>
+                            <p class="text-[var(--color-dark-text)] mb-4 flex-grow">La <strong>herramienta esencial</strong> para automatizar tus <strong>campañas de email marketing</strong> y <strong>nutrir leads</strong>.</p>
+                            <div class="w-full mt-4">
+                                <a href="https://ejemplo.com/producto2" target="_blank" rel="noopener noreferrer" class="btn-primary w-full">
+                                    Adquiérelo Ya
+                                </a>
+                            </div>
+                        </div>
+                        <!-- Producto de Afiliación 3 -->
+                        <div class="card flex flex-col items-center text-center p-6">
+                            <img src="https://placehold.co/150x200/d2cdc4/0d0d0d?text=Producto+3" alt="Producto de Afiliación 3" class="rounded-lg mb-4 shadow-sm">
+                            <h3 class="text-xl font-semibold text-[var(--color-dark-text)] mb-2">Libro Z: Copywriting Persuasivo para Ventas</h3>
+                            <p class="text-[var(--color-dark-text)] mb-4 flex-grow">Aprende a escribir <strong>textos que venden</strong> y cautivan a tu <strong>audiencia digital</strong>.</p>
+                            <div class="w-full mt-4">
+                                <a href="https://ejemplo.com/producto3" target="_blank" rel="noopener noreferrer" class="btn-primary w-full">
+                                    Adquiérelo Ya
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-sm text-[var(--color-dark-text)] opacity-75 mt-8">
+                        *Estos enlaces pueden ser de afiliación, lo que significa que ganamos una comisión por las compras que califican.
+                    </p>
+                </div>
+            </section>
+
+            <!-- Testimonials Section -->
+            <section id="testimonials-section" class="dashboard-card">
+                <div class="text-center">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-8">
+                        Lo que Dicen Nuestros Clientes de Marketing sin Pendejadas
+                    </h2>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <div class="card bg-white p-8">
+                            <p class="text-lg italic text-[var(--color-dark-text)] mb-4">
+                                "¡Este <strong>ebook de marketing</strong> es una revelación! Por fin alguien dice las cosas como son. Mi <strong>negocio</strong> ha dado un giro de 180 grados en <strong>ventas online</strong>."
+                            </p>
+                            <p class="font-semibold text-[var(--color-primary-red)]">- Juan Pérez, Emprendedor Digital</p>
+                        </div>
+                        <div class="card bg-white p-8">
+                            <p class="text-lg italic text-[var(--color-dark-text)] mb-4">
+                                "Las <strong>asesorías de marketing</strong> son oro puro. Me ayudaron a enfocar mi <strong>estrategia digital</strong> y a ver <strong>resultados</strong> en tiempo récord. ¡Totalmente recomendado para <strong>crecimiento de negocio</strong>!"
+                            </p>
+                            <p class="font-semibold text-[var(--color-primary-red)]">- María García, Dueña de Pyme Online</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Call to Action Footer (integrated as a dashboard card) -->
+            <section id="contact-section" class="dashboard-card hero-bg text-white text-center">
+                <h2 class="text-3xl md:text-5xl font-extrabold mb-6">
+                    ¡No Más Pendejadas, Solo Marketing Real y Resultados Comprobados!
+                </h2>
+                <p class="text-xl md:text-2xl mb-10 max-w-3xl mx-auto">
+                    Es hora de dejar atrás las falsas promesas y construir un <strong>marketing digital</strong> que realmente funcione para ti. ¡<strong>Optimiza tu estrategia</strong> y <strong>escala tu negocio</strong> hoy mismo!
+                </p>
+                <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-6">
+                    <a href="#ebook-section" class="btn-primary">
+                        Obtén el Ebook Ahora
+                    </a>
+                    <a href="#asesorias-section" class="btn-secondary">
+                        Agenda tu Asesoría de Marketing
+                    </a>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Floating AI Assistant Button -->
+    <button id="chat-float-button">
+        💬
+    </button>
+
+    <!-- AI Chat Modal -->
+    <div id="ai-chat-modal" class="hidden">
+        <div class="chat-header">
+            <span>Alejandra</span>
+            <button class="close-btn" id="closeChatBtn">&times;</button>
+        </div>
+        <div class="chat-body" id="chatBody">
+            <div class="chat-message ai">¡Hola! Soy Alejandra, tu asistente de IA. ¿En qué puedo ayudarte hoy sobre marketing digital?</div>
+        </div>
+        <div class="chat-input-area">
+            <input type="text" id="chatInput" placeholder="Escribe tu pregunta aquí..." />
+            <button id="sendChatBtn">Enviar</button>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-[var(--color-dark-text)] text-white py-8 text-center">
+        <div class="container mx-auto px-4">
+            <p>&copy; 2025 Marketing sin Pendejadas. Todos los derechos reservados.</p>
+            <div class="flex justify-center space-x-4 mt-4">
+                <a href="#" class="text-[var(--color-light-bg)] hover:text-white transition duration-200">Política de Privacidad</a>
+                <a href="#" class="text-[var(--color-light-bg)] hover:text-white transition duration-200">Términos y Condiciones</a>
+            </div>
+            <p id="userIdDisplay" class="text-xs text-[var(--color-light-bg)] mt-2"></p>
+        </div>
+    </footer>
+
+    <!-- Enlace a tu archivo de script JS -->
+    <script type="module" src="script.js"></script>
+</body>
+</html>
